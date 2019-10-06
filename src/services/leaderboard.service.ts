@@ -3,6 +3,8 @@ import * as firebase from 'firebase';
 import 'firebase/database';
 import {environment} from '../environments/environment.prod';
 import {Leaderboard} from '../tools/leaderboard';
+import {ILeaderboard} from '../tools/leaderboard.interface';
+import StringUtility from '../utilities/string-utility';
 
 @Injectable({
   providedIn: 'root'
@@ -27,19 +29,36 @@ export class LeaderboardService {
   //#region Private Functions
 
   public async find(): Promise<Leaderboard[]> {
-    const base: firebase.database.Reference = this.db.ref('/leaderboards/');
+    const base: firebase.database.Reference = this.db.ref('/leaderboard/');
     const snapshot: firebase.database.DataSnapshot = await base.once('value');
     const leaderboards: Leaderboard[] = snapshot.val();
 
     return leaderboards;
   }
 
-  public create(leaderboard: Leaderboard): void {
+  public async create(leaderboard: Leaderboard): Promise<void> {
     if (!leaderboard) {
       return;
     }
 
-    firebase.database().ref('/').push(leaderboard);
+    const newLeaderboardEntry: ILeaderboard = leaderboard.toJSON(leaderboard);
+    if (StringUtility.isNullOrWhiteSpace(newLeaderboardEntry.id)) {
+      const newId = await this.generateId();
+      newLeaderboardEntry.id = newId;
+    }
+    firebase.database().ref('/leaderboard/').push(newLeaderboardEntry);
+  }
+
+  public async update(leaderboard: Leaderboard): Promise<void> {
+    if (!leaderboard) {
+      return;
+    }
+    if (StringUtility.isNullOrWhiteSpace(leaderboard.id)) {
+      throw new Error('LEADERBOARD MUST HAVE ID');
+    }
+
+    const newLeaderboardEntry: ILeaderboard = leaderboard.toJSON(leaderboard);
+    firebase.database().ref('/leaderboard/').update(newLeaderboardEntry);
   }
 
   public generateId(): string {

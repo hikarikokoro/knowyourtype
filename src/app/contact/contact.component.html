@@ -1,0 +1,40 @@
+<section class="section contact">
+  <h1>WE KNOW<br>OUR <b>TYPE!</b></h1>
+
+  <p>Assess the following statements about<br>
+    <b>type 2 inflammation</b>, <b>asthma</b> and<br>
+    <b>CRSwNP</b>. If you get each one correct,<br>
+    you will join our honour roll!</p>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+    <fieldset>
+      <label>Name</label>
+      <input type="text" name="name" formControlName="name">
+
+      <div *ngIf="profileForm.controls.name.invalid && (profileForm.controls.name.dirty || profileForm.controls.name.touched || submitted)"
+           class="alert alert-danger">
+        <div *ngIf="profileForm.controls.name.errors.required && submitted">
+          <p>Name is required.</p>
+        </div>
+        <div *ngIf="profileForm.controls.name.errors.minlength && submitted">
+          <p>Name must be at least 4 characters long.</p>
+        </div>
+      </div><br>
+
+      <label>Specialty</label>
+      <input type="text" name="type" formControlName="type">
+
+      <div *ngIf="profileForm.controls.type.invalid && (profileForm.controls.type.dirty || profileForm.controls.type.touched || submitted)"
+           class="alert alert-danger">
+        <div *ngIf="profileForm.controls.type.errors.required && submitted">
+          <p>Type is required.</p>
+        </div>
+        <div *ngIf="profileForm.controls.type.errors.minlength && submitted">
+          <p>Type must be at least 4 characters long.</p>
+        </div>
+      </div><br>
+    </fieldset>
+    <button type="submit">START THE QUIZ</button>
+  </form>
+  <p>At any time, hold the ‘X’ button<br>to restart the app</p>
+</section>

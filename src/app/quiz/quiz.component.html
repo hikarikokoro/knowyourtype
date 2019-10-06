@@ -1,0 +1,41 @@
+<section class="section quiz">
+  <div *ngIf="!seeScore">
+    <div class="quiz" *ngIf="!answered">
+      <small>{{question.id}}/6</small>
+      <p>{{question.question}}</p>
+
+      <div class="answers">
+        <button (click)="checkAnswer(true)">TRUE</button>
+        <button (click)="checkAnswer(false)">FALSE</button>
+      </div>
+      <img *ngIf="question.id !== 1" src="../../assets/img/questions/{{question.id -1}}.png">
+    </div>
+
+    <div class="quiz answered" *ngIf="answered">
+      <p class="answer">{{question.answer}}!</p>
+      <p>{{question.explanation}}</p>
+
+      <button (click)="next()">NEXT</button>
+
+      <img src="../../assets/img/questions/{{question.id}}.png">
+    </div>
+  </div>
+
+  <div *ngIf="seeScore">
+    <div class="answer winner" *ngIf="score === 6">
+      <p>CONGRATULATIONS!</p>
+      <h2>YOU’RE JUST<br>OUR TYPE 2!</h2>
+      <p>YOUR SCORE IS {{score}} ON 6.</p>
+
+      <a class="button" routerLink="/final">NEXT</a>
+    </div>
+
+    <div class="answer looser" *ngIf="score !== 6">
+      <h2>SO CLOSE!</h2>
+      <p>YOUR SCORE IS {{score}} ON 6.</p>
+
+      <a class="button" routerLink="/final">NEXT</a>
+    </div>
+  </div>
+
+</section>

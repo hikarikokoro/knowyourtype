@@ -1,0 +1,18 @@
+<section class="section splash">
+  <h2>Are you our type 2?</h2>
+
+  <div class="leaderboard">
+    <ul>
+      <ng-template ngFor let-item [ngForOf]="leaderboards" let-i="index">
+        <li>
+          <p class="name">{{item.name}}</p><span>{{item.type}}</span>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+
+  <p>TAKE THE QUIZ</p>
+  <p>Get your name on the honour roll!</p>
+
+  <a class="button" routerLink="/contact"><img src="../../assets/img/HandTapIcon_SFW.svg">Tap anywhere to begin</a>
+</section>

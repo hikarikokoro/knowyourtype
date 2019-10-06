@@ -1,0 +1,35 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Type 2 inflammation encompasses eosinophilic and \n allergic asthma phenotypes through the action of \n key cytokines IL-4, IL-13, IL-5, and the antibody IgE.",
+      "answer": true,
+      "explanation": null
+    },{
+      "id": 2,
+      "question": "Th2 are the only cells responsible for the expression \n of the type 2 cytokines IL-4, IL-13, and IL-5.",
+      "answer": false,
+      "explanation": "ILC2 and Tfh cells also contribute \n to the type 2 inflammatory profile."
+    },{
+      "id": 3,
+      "question": "IL-4 has a crucial upstream role in type 2 \n inflammation by driving the differentiation of \n Th2 cells which contribute to the production \n of type 2 cytokines.",
+      "answer": true,
+      "explanation": null
+    },{
+      "id": 4,
+      "question": "One overlapping role of IL-4 and IL-13 in the \n process of type 2 inflammation is their implication \n in the class switching process of B cells \n to initiate IgE secretion.",
+      "answer": true,
+      "explanation": null
+    },{
+      "id": 5,
+      "question": "IL-5 and IL-4 both contribute to the accumulation \n of eosinophils during type 2 inflammation.",
+      "answer": true,
+      "explanation": null
+    },{
+      "id": 6,
+      "question": "In the lungs, the roles of IL-4, IL-13, and IL-5 \n cytokines during type 2 inflammation are solely \n focused on immune cells.",
+      "answer": true,
+      "explanation": "All three cytokines contribute to the structural \n changes in the airway epithelium and submucosa."
+    }
+  ]
+}
