@@ -87,7 +87,7 @@ export class FinalComponent implements OnInit {
     }, 1000);
   }
 
-  private pauseTimer() {
+  public pauseTimer() {
     clearInterval(this._interval);
   }
 
