@@ -1,0 +1,69 @@
+{
+  "splash": {
+    "titre": "TESTEZ VOS \n CONNAISSANCES !",
+    "sous-titre": "Souhaitez-vous participer \n au jeu-questionnaire?",
+    "liste_honneur1": "Liste d’Honneur!",
+    "liste_honneur2": "Votre nom pourrait figurer sur notre",
+    "instructions": "Tapez n’importe où sur l’écran pour commencer"
+  },
+  "contact": {
+    "titre": "COMMENT \n PARTICIPER AU JEU",
+    "titre2": "",
+    "texte": "Évaluez les énoncés qui suivent concernant \n ",
+    "texte_b1": "l’inflammation de type 2",
+    "texte_b2": "l’asthme",
+    "texte_2.5": "et la \n ",
+    "texte_b3": "RSCaPN",
+    "texte_fin": ". Si vous répondez correctement \n à toutes les questions, votre nom \n apparaîtra sur notre Liste d’Honneur !",
+    "name": "Nom",
+    "type": "Spécialité",
+    "start": "COMMENCER",
+    "instructions": "Vous pouvez appuyer sur le bouton « x » à \n tout moment pour redémarrer l’application"
+  },
+  "quiz": {
+    "true": "VRAI",
+    "false": "FAUX",
+    "score": "VOIR VOTRE SCORE",
+    "next": "SUIVANT",
+    "q1": "L’inflammation de type 2 est observée chez \n les phénotypes allergique et éosinophilique de \n l’asthme en raison de l’action des cytokines IL-4, \n IL-13 et IL-5 ainsi que de l’anticorps IgE.",
+    "q2": "Les cellules Th2 sont les seules cellules \n responsables de l’expression des cytokines \n de type 2 : IL-4, IL-13 et IL-5.",
+    "q2e": "Plusieurs autres cellules contribuent au profil des \n cytokines de type 2, dont les cellules ILC2 et Tfh.",
+    "q3": "L’IL-4 joue un crucial rôle en amont durant le \n processus d’inflammation de type 2. Elle stimule \n la différenciation des cellules Th2 qui contribuent \n à la production des cytokines de type 2.",
+    "q4": "Un des rôles communs de l’IL-4 et de l’IL-13 au \n cours du processus d’inflammation de type 2 est \n leur implication dans la commutation isotypique \n des cellules B qui mène à la production d’IgE.",
+    "q5": "L’IL-4, l’IL-5 et l’IL-13 sont impliquées dans la \n maturation, l’activation et l’accumulation des \n éosinophiles observés au cours du processus \n d’inflammation de type 2.",
+    "q6": "Les fonctions des cytokines IL-4, IL-13 et \n IL-5 dans les poumons pendant l’inflammation \n de type 2 affectent uniquement les cellules \n du système immunitaire.",
+    "q6e": "Les trois cytokines contribuent aux \n changements structuraux de l’épithélium et de \n la sous-muqueuse des voies respiratoires."
+  },
+  "retro": {
+    "almost": "PRESQUE",
+    "answer1": "VOUS AVEZ UN SCORE DE",
+    "answer2": "SUR 6.",
+    "next": "SUIVANT",
+    "bonus-title": "VOTRE NOM FIGURERA SUR \n NOTRE LISTE D’HONNEUR!",
+    "bonus-title-big": "FÉLICITATIONS,",
+    "bonus-text": "RÉPONDEZ À LA QUESTION BONUS \n ET JOIGNEZ LA LISTE DE PRESTIGE!",
+    "bonus-text2": "",
+    "bonus-button": "QUESTION BONUS",
+    "bonus-question-title": "Question Bonus",
+    "bonus-question": "Sélectionnez les cellules qui sécrètent \n principalement l’IL-4 et l’IL-13.",
+    "bonus-good-title": "Félicitations,",
+    "bonus-good-text": "votre nom figure \n sur la Liste de Prestige !",
+    "bonus-bad-title": "Désolé,",
+    "bonus-bad-text": "la bonne réponse incluait les cellules suivantes : \n Th2, éosinophile, mastocyte et basophile !",
+    "bonus-bad-text2": "Mais ne vous en faites pas, \n votre nom demeurera sur notre Liste d’Honneur."
+  },
+  "final": {
+    "false-text": "Apprenez-en plus sur l’inflammation \n de type 2 et sur son rôle dans l’asthme \n et la RSCaPN en",
+    "false-textb": "communiquant \n avec votre liaison médicale et\nscientifique",
+    "false-text2": "ou en",
+    "false-textb2": "prenant un\ndépliant",
+    "false-text3": "au kiosque.",
+    "try-again": "VOULEZ-VOUS RÉESSAYER?",
+    "true-text": "Vous voulez en apprendre davantage\nsur l’inflammation de type 2 ?\n",
+    "true-textb": "Contactez votre MSL.",
+    "true-text2": "Vous voulez rapporter ces nouvelles\nconnaissances avec vous ?\n",
+    "true-textb2": "Prenez une brochure\ndisponible",
+    "true-text3": "à notre stand.",
+    "true-bottom": "Retrouvez votre nom \n sur la Liste d’Honneur !"
+    }
+}

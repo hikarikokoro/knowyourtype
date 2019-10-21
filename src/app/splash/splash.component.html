@@ -1,0 +1,51 @@
+<section class="section splash">
+  <div class="languageButtons">
+    <button (click)="useLanguage('en')" *ngIf="currentLanguage === 'fr'">en</button>
+    <button (click)="useLanguage('fr')" *ngIf="currentLanguage === 'en'">fr</button>
+  </div>
+  <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
+  <h1><img src="../../assets/img/DUPA-19-111_1080_BKnowOurType_Lettermark_SFW.svg"></h1>
+  <h2 class="{{currentLanguage}}">{{'splash.sous-titre' | translate}}</h2>
+
+  <div class="backgroundShape"></div>
+  <img src="../../assets/img/AwardThing.svg" class="award">
+
+  <div class="leaderboard">
+    <div class="ch2">
+      <ul id="firstLeaderboard">
+        <ng-template ngFor let-item [ngForOf]="topLeaderboards" let-i="index">
+          <li>
+            <p class="name">{{item.name}}</p><span>{{item.type}}</span>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+  <div class="backgroundShadow"></div>
+
+  <div class="backgroundShape2"></div>
+  <div class="leaderboard2">
+    <div class="ch">
+      <ul id="secondLeaderboard">
+        <ng-template ngFor let-item [ngForOf]="leaderboards" let-i="index">
+          <li>
+            <p class="name">{{item.name}}</p><span>{{item.type}}</span>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+  <div class="backgroundShadow2"></div>
+
+  <div *ngIf="currentLanguage === 'fr'" class="{{currentLanguage}}">
+    <p>{{'splash.liste_honneur2' | translate}}</p>
+    <p class="big">{{'splash.liste_honneur1' | translate}}</p>
+  </div>
+  <div *ngIf="currentLanguage === 'en'" class="{{currentLanguage}}">
+    <p class="big">{{'splash.liste_honneur1' | translate}}</p>
+    <p>{{'splash.liste_honneur2' | translate}}</p>
+  </div>
+
+  <a class="button {{currentLanguage}}" routerLink="/contact"><img src="../../assets/img/HandTapIcon_SFW.svg">{{'splash.instructions' |
+    translate}}</a>
+</section>

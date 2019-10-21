@@ -1,0 +1,69 @@
+{
+  "splash": {
+    "titre": "TESTEZ VOS \n CONNAISSANCES !",
+    "sous-titre": "Are you our type 2?",
+    "liste_honneur1": "TAKE THE QUIZ",
+    "liste_honneur2": "Get your name on the honour roll!",
+    "instructions": "Tap anywhere to begin"
+  },
+  "contact": {
+    "titre": "WE KNOW \n OUR",
+    "titre2": "TYPE!",
+    "texte": "Assess the following statements about",
+    "texte_b1": "type 2 inflammation",
+    "texte_b2": "asthma",
+    "texte_2.5": " and ",
+    "texte_b3": "CRSwNP",
+    "texte_fin": ". If you get each one correct, \n you will join our honour roll!",
+    "name": "Name",
+    "type": "Specialty",
+    "start": "START THE QUIZ",
+    "instructions": "At any time, tap the ‘X’ button \n to restart the app"
+  },
+  "quiz": {
+    "true": "TRUE",
+    "false": "FALSE",
+    "score": "GET YOUR SCORE",
+    "next": "NEXT",
+    "q1": "Type 2 inflammation encompasses eosinophilic and \n allergic asthma phenotypes through the action of \n key cytokines IL-4, IL-13, IL-5, and the antibody IgE.",
+    "q2": "Th2 are the only cells responsible for the expression \n of the type 2 cytokines IL-4, IL-13, and IL-5.",
+    "q2e": "many other cells contribute to the type 2 \n cytokine profile, including ILC2 and Tfh cells.",
+    "q3": "IL-4 has a crucial upstream role in type 2 \n inflammation by driving the differentiation of \n Th2 cells which contribute to the production \n of type 2 cytokines.",
+    "q4": "One overlapping role of IL-4 and IL-13 in the \n process of type 2 inflammation is their implication \n in the class switching process of B cells \n to initiate IgE secretion.",
+    "q5": "IL-4, IL-5, and IL-13 are involved in the maturation, \n activation and accumulation of eosinophils observed \n in type 2 inflammation.",
+    "q6": "In the lungs, the roles of IL-4, IL-13, and IL-5 \n cytokines during type 2 inflammation are solely \n focused on immune cells.",
+    "q6e": "All three cytokines contribute to the structural \n changes in the airway epithelium and submucosa."
+  },
+  "retro": {
+    "almost": "SO CLOSE!",
+    "answer1": "YOUR SCORE IS",
+    "answer2": "ON 6.",
+    "next": "NEXT",
+    "bonus-title": "CONGRATULATIONS ON MAKING THE HONOUR ROLL!",
+    "bonus-title-big": "YOU’RE JUST \n OUR TYPE 2!",
+    "bonus-text": "NOW DO YOU THINK YOU CAN",
+    "bonus-text2": "GET ON THE A-LIST?",
+    "bonus-button": "BONUS QUESTION",
+    "bonus-question-title": "Bonus Question",
+    "bonus-question": "Select the cells which predominantly secrete \n both IL-4 and IL-13.",
+    "bonus-good-title": "Congratulations,",
+    "bonus-good-text": "you are on the A-list!",
+    "bonus-bad-title": "Sorry,",
+    "bonus-bad-text": "the answer was Th2, eosinophil, \n mast cell, and basophil!",
+    "bonus-bad-text2": "Don’t worry, you are still our Type 2! \n Look for your name on the honour roll."
+  },
+  "final": {
+    "false-text": "Learn more about type 2 inflammation\nand its role in asthma and CRSwNP by\n",
+    "false-textb": "contacting your MSL",
+    "false-text2": "or",
+    "false-textb2": "pick up\na Leave Behind",
+    "false-text3": "from the booth.",
+    "try-again": "TRY AGAIN?",
+    "true-text": "Want to learn more about type 2 \n inflammation and its role in asthma \n and CRSwNP?",
+    "true-textb": "Contact your MSL. \n ",
+    "true-text2": "Want to bring your knowledge \n back home?",
+    "true-textb2": "Grab a Leave Behind \n ",
+    "true-text3": "from the booth.",
+    "true-bottom": "Look for your name\non the honour roll!"
+  }
+}

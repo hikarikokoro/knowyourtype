@@ -1,0 +1,43 @@
+<section class="section contact">
+  <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
+  <a routerLink="/splash" class="close"><img src="../../assets/img/Close_X.svg"></a>
+  <h1 class="{{currentLanguage}}">{{ 'contact.titre' | translate }} <b>{{ 'contact.titre2' | translate }}</b></h1>
+
+  <p class="{{currentLanguage}}">{{ 'contact.texte' | translate }}
+    <b>{{ 'contact.texte_b1' | translate }}</b>,
+    <b>{{ 'contact.texte_b2' | translate }}</b>
+    {{ 'contact.texte_2.5' | translate }}
+    <b>{{ 'contact.texte_b3' | translate }}</b>{{ 'contact.texte_fin' | translate }}</p>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+    <fieldset>
+      <label>{{ 'contact.name' | translate }}</label>
+      <input type="text" name="name" formControlName="name">
+
+      <div *ngIf="profileForm.controls.name.invalid && (profileForm.controls.name.dirty || profileForm.controls.name.touched || submitted)"
+           class="alert alert-danger">
+        <div *ngIf="profileForm.controls.name.errors.required && submitted">
+          <p>Name is required.</p>
+        </div>
+        <div *ngIf="profileForm.controls.name.errors.minlength && submitted">
+          <p>Name must be at least 4 characters long.</p>
+        </div>
+      </div><br>
+
+      <label>{{ 'contact.type' | translate }}</label>
+      <input type="text" name="type" formControlName="type">
+
+      <div *ngIf="profileForm.controls.type.invalid && (profileForm.controls.type.dirty || profileForm.controls.type.touched || submitted)"
+           class="alert alert-danger">
+        <div *ngIf="profileForm.controls.type.errors.required && submitted">
+          <p>Type is required.</p>
+        </div>
+        <div *ngIf="profileForm.controls.type.errors.minlength && submitted">
+          <p>Type must be at least 4 characters long.</p>
+        </div>
+      </div><br>
+    </fieldset>
+    <button type="submit">{{ 'contact.start' | translate }}</button>
+  </form>
+  <p class="{{currentLanguage}}">{{ 'contact.instructions' | translate }}</p>
+</section>

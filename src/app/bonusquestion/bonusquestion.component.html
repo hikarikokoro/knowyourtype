@@ -1,0 +1,47 @@
+<section class="section bonus">
+  <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
+  <a routerLink="/splash" class="close"><img src="../../assets/img/Close_X.svg"></a>
+
+  <div class="quiz" *ngIf="!answered">
+    <div class="content">
+      <h2>{{ 'retro.bonus-question-title' | translate}}</h2>
+      <p>{{ 'retro.bonus-question' | translate}}</p>
+
+
+      <img src="../../assets/img/Interleukins_Lines.svg" class="lines">
+      <div class="answers">
+        <button (click)="checkAnswer(false)" class="first"><span>CD4+ naïveT cell</span><img src="../../assets/img/germs/Interleukins_WebOp_1.png"></button>
+        <div>
+          <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_2.png"><span>Th1</span></button>
+          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_3.png"><span>Th2</span></button>
+          <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_4.png"><span>Th17</span></button>
+          <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_5.png"><span>Th22</span></button>
+        </div>
+        <div>
+          <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_6.png"><span>ILC2</span></button>
+          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_7.png"><span>Eosinophil</span></button>
+          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_8.png"><span>Mast cell</span></button>
+          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_9.png"><span>Basophil</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="answered">
+    <div *ngIf="answer" class="answer winner">
+      <h2 class="{{currentLanguage}}">{{ 'retro.bonus-good-title' | translate}}<br>
+        {{ 'retro.bonus-good-text' | translate}}</h2>
+
+      <a class="button" routerLink="/final/true">{{ 'retro.next' | translate}}</a>
+    </div>
+
+    <div *ngIf="!answer" class="answer looser">
+      <h2 class="{{currentLanguage}}">{{ 'retro.bonus-bad-title' | translate}}</h2>
+      <p class="{{currentLanguage}}">{{ 'retro.bonus-bad-text' | translate}}</p>
+      <p class="{{currentLanguage}}">{{ 'retro.bonus-bad-text2' | translate}}</p>
+
+      <a class="button" routerLink="/final/true">{{ 'retro.next' | translate}}</a>
+    </div>
+  </div>
+
+</section>

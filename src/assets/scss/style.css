@@ -1,0 +1,521 @@
+@charset "UTF-8";
+@import url(~video.js/dist/video-js.css);
+/*
+videojs.wavesurfer.css is only required when recording audio-only:
+@import '~videojs-wavesurfer/dist/css/videojs.wavesurfer.css';
+*/
+@import url(~videojs-record/dist/css/videojs.record.css);
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff; }
+
+h1 {
+  font-size: 100px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #e1dd4b; }
+
+h2 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-bottom: 10px; }
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px; }
+
+p {
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #ffffff; }
+
+b {
+  font-weight: bold; }
+
+.timer {
+  font-family: ocr-a-std, monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  color: #0d535c;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px 0 10px 0;
+  border: solid #0d535c 3px; }
+
+.trademark {
+  vertical-align: super;
+  font-size: 8px; }
+
+.button, button {
+  background-color: #74c4d8;
+  padding: 5px 70px;
+  border: solid #ffffff 2px;
+  color: #ffffff;
+  margin: 20px 0;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+  .button:disabled, button:disabled {
+    opacity: 0.6; }
+  .button.quit, button.quit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 5px 10px; }
+  .button.next, button.next {
+    border-radius: 60px;
+    padding: 28px 11px; }
+  .button.bottom, button.bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    left: 50%;
+    margin-left: -100px; }
+    .button.bottom.next, button.bottom.next {
+      margin-left: -47px; }
+
+.background-shape {
+  transform: rotate(-3deg);
+  background-color: #0b4043;
+  width: 120%;
+  height: 380px;
+  position: absolute;
+  z-index: -9;
+  margin: 50px 5% 50px -5%; }
+  .background-shape.top {
+    top: -150px;
+    margin: 50px 5% 50px -5%; }
+  .background-shape.toptop {
+    top: -300px;
+    margin: 50px 5% 50px -5%; }
+  .background-shape.tipytop {
+    top: -360px;
+    margin: 50px 5% 50px -5%; }
+  .background-shape.bottom {
+    transform: rotate(-3deg);
+    background-color: #0b4043;
+    width: 120%;
+    height: 380px;
+    position: absolute;
+    z-index: -9;
+    bottom: -300px;
+    margin: 50px 5% 50px -5%; }
+  .background-shape.reverse {
+    top: -150px;
+    margin: 50px 5% 50px -5%; }
+  .background-shape.yellow {
+    background-color: #e1dd4b; }
+  .background-shape.blue {
+    background-color: #74c4d8; }
+
+.caps {
+  text-transform: uppercase; }
+
+body {
+  background-color: #0d535c;
+  text-align: center;
+  overflow-x: hidden; }
+  body main {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow-x: hidden; }
+    body main section {
+      position: relative;
+      min-height: 100vh; }
+      body main section .content {
+        max-width: 1000px;
+        margin: auto;
+        text-align: left;
+        position: relative; }
+      body main section.splash a.button {
+        position: absolute;
+        bottom: 65px;
+        left: 50%;
+        margin-left: -120px; }
+      body main section.splash div.leaderboard {
+        width: 60%;
+        margin: 30px auto;
+        background-color: #ffffff;
+        border-radius: 25px 25px 25px 25px;
+        padding: 30px; }
+        body main section.splash div.leaderboard ul li {
+          list-style-type: none;
+          display: block;
+          width: 100%;
+          border-bottom: 1px grey solid;
+          text-align: left; }
+          body main section.splash div.leaderboard ul li:last-child {
+            border: none; }
+          body main section.splash div.leaderboard ul li p.name {
+            font-family: 'trade-gothic-next', sans-serif;
+            display: block;
+            font-size: 50px;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #474747;
+            font-weight: 300;
+            margin: 7px 0 15px 0; }
+            body main section.splash div.leaderboard ul li p.name:after {
+              content: "Replinstien Shtosselhoff"; }
+      body main section.intro {
+        overflow-x: hidden; }
+        body main section.intro p {
+          margin-top: 15px; }
+        body main section.intro.intro2 .titles, body main section.intro.intro3 .titles {
+          margin: 100px 0 120px 0; }
+        body main section.intro.intro3 .titles {
+          margin: 100px 0 120px 0; }
+        body main section.intro.intro3 .yellow {
+          color: #e1dd4b; }
+        body main section.intro.intro3 .lightBlue {
+          color: #74c4d8; }
+        body main section.intro.intro3 p span {
+          color: #e1dd4b;
+          display: block; }
+        body main section.intro.emails .titles {
+          margin: 100px 0 120px 0; }
+      body main section.wheel {
+        height: 950px; }
+        body main section.wheel .button {
+          position: absolute;
+          bottom: 0;
+          z-index: 99;
+          left: 50%;
+          margin-left: -100px; }
+        body main section.wheel #click {
+          max-width: 40px;
+          z-index: 999999;
+          display: inline-block;
+          position: absolute;
+          right: 50%;
+          margin-right: -20px; }
+        body main section.wheel #clickshadow {
+          max-width: 50px;
+          z-index: 999;
+          display: inline-block;
+          position: absolute;
+          right: 50%;
+          margin-right: -25px;
+          opacity: 0.3; }
+        body main section.wheel #knob, body main section.wheel #shadow {
+          width: 480px;
+          display: inherit;
+          user-drag: none;
+          user-select: none;
+          -moz-user-select: none;
+          -webkit-user-drag: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          z-index: 99;
+          position: absolute;
+          left: 50%;
+          margin: 50px 0 50px -240px; }
+        body main section.wheel #shadow {
+          width: 500px;
+          top: 245px;
+          z-index: 9;
+          opacity: 0.3; }
+        body main section.wheel p img {
+          display: block;
+          width: 540px;
+          margin-left: -30px;
+          vertical-align: middle;
+          padding-right: 10px; }
+          body main section.wheel p img.spin {
+            display: inline-block;
+            width: 50px;
+            margin-left: 0; }
+        body main section.wheel p.small {
+          font-size: 30px; }
+        body main section.wheel p.message {
+          color: #e2de4b; }
+      body main section.meetdoctor {
+        text-align: left; }
+        body main section.meetdoctor h1 {
+          color: #0b4043; }
+        body main section.meetdoctor ul {
+          margin: 0;
+          padding: 40px 0; }
+          body main section.meetdoctor ul li {
+            text-decoration-style: none;
+            padding: 10px 0;
+            font-size: 50px; }
+            body main section.meetdoctor ul li:before {
+              content: '•';
+              color: #e1dd4b;
+              margin-right: 20px;
+              font-size: 30px; }
+      body main section.meetdoctorquote p {
+        white-space: pre; }
+      body main section.patients h1 {
+        color: #ffffff;
+        font-size: 50px;
+        margin-top: 30px; }
+      body main section.patients ul {
+        padding: 0;
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px auto; }
+        body main section.patients ul li {
+          flex: 1 1 158px;
+          cursor: pointer; }
+          body main section.patients ul li p {
+            padding: 20px;
+            white-space: pre;
+            font-size: 20px;
+            line-height: 25px;
+            font-style: italic; }
+          body main section.patients ul li.notselected p, body main section.patients ul li.notselected img {
+            opacity: 0.5; }
+          body main section.patients ul li span {
+            color: #e1dd4b;
+            font-size: 40px;
+            line-height: 50px; }
+          body main section.patients ul li:first-child {
+            border-bottom: 2px #0b4043 solid;
+            border-right: 2px #0b4043 solid; }
+          body main section.patients ul li:nth-child(2) {
+            border-bottom: 2px #0b4043 solid; }
+          body main section.patients ul li:nth-child(3) {
+            border-right: 2px #0b4043 solid; }
+      body main section.patients .play {
+        background: none;
+        border: none;
+        box-shadow: none; }
+      body main section.patients-retro {
+        overflow: hidden; }
+        body main section.patients-retro .content {
+          min-height: 700px; }
+        body main section.patients-retro h1 {
+          color: #ffffff;
+          padding: 160px 0 40px 0; }
+        body main section.patients-retro p {
+          font-size: 40px;
+          line-height: 50px; }
+          body main section.patients-retro p span {
+            color: #e1dd4b;
+            font-size: 50px;
+            line-height: 60px; }
+        body main section.patients-retro small {
+          position: absolute;
+          bottom: 20px;
+          color: #0b4043;
+          left: 0; }
+      body main section.record {
+        height: 100%; }
+        body main section.record h1 {
+          font-size: 45px;
+          text-transform: initial; }
+        body main section.record img {
+          width: 100%; }
+        body main section.record p.small {
+          font-size: 25px; }
+        body main section.record ul {
+          color: #e2de4b;
+          margin: 0;
+          padding: 0;
+          font-size: 25px; }
+          body main section.record ul li {
+            color: #ffffff;
+            margin: 0;
+            padding: 0; }
+        body main section.record #video_1 {
+          width: 300px;
+          height: 225px;
+          margin: 60px auto; }
+        body main section.record .buttons button {
+          display: inline-block;
+          width: 50%;
+          text-align: center;
+          background-color: transparent;
+          border: none; }
+          body main section.record .buttons button img {
+            max-width: 40px;
+            display: block;
+            margin: auto; }
+          body main section.record .buttons button span {
+            font-size: 25px;
+            line-height: 30px;
+            display: block;
+            color: #ffffff; }
+          body main section.record .buttons button:disabled {
+            opacity: 0.6; }
+        body main section.record .timer {
+          position: absolute;
+          right: 20px;
+          bottom: 103px;
+          z-index: 999;
+          font-family: trade-gothic-next, sans-serif; }
+        body main section.record .recordtimer {
+          position: absolute;
+          right: 50%;
+          margin-right: -18px;
+          bottom: 145px;
+          font-family: trade-gothic-next, sans-serif; }
+        body main section.record .recordtimerbck {
+          position: absolute;
+          right: 0;
+          bottom: 107px;
+          width: 100px;
+          height: 80px;
+          background-color: transparent;
+          overflow: hidden;
+          z-index: 9; }
+        body main section.record .recordtimerbck:before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          right: -8px;
+          height: 80px;
+          width: 80px;
+          background: #74c4d8;
+          -webkit-transform: skew(-6deg, 4deg);
+          transform: skew(-6deg, 4deg); }
+        body main section.record .next {
+          bottom: -80px; }
+      body main section.final {
+        z-index: 999; }
+        body main section.final h1 {
+          text-transform: uppercase;
+          margin: 65px 0 -20px 0;
+          transform: rotate(-5deg);
+          line-height: 70px;
+          font-size: 50px; }
+        body main section.final p:not(.timer):not(.not) {
+          transform: rotate(-5deg);
+          line-height: 50px;
+          font-size: 45px;
+          font-style: italic;
+          font-weight: 700;
+          color: #ffffff; }
+        body main section.final p:not(.timer) {
+          font-style: italic;
+          font-weight: 700;
+          color: #ffffff; }
+          body main section.final p:not(.timer) span:not(.champion) {
+            display: block;
+            transform: rotate(-5deg);
+            margin-top: 150px;
+            font-size: 100px;
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); }
+          body main section.final p:not(.timer) span.champion {
+            display: block;
+            transform: rotate(-5deg);
+            margin-top: 115px;
+            font-size: 73px;
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+            line-height: 60px; }
+    body main .background-image-final {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0; }
+  body footer {
+    display: block;
+    margin: -50px auto 0 -270px;
+    padding: 0 30px;
+    z-index: 999999;
+    width: 470px;
+    position: absolute;
+    left: 50%;
+    text-align: left;
+    color: #ffffff; }
+    body footer small {
+      font-size: 6px; }
+      body footer small .trademark {
+        font-size: 4px; }
+      body footer small .logo {
+        position: absolute;
+        max-width: 200px;
+        right: 40px;
+        bottom: 0; }
+      body footer small.final {
+        color: #7c6e66; }
+        body footer small.final .trademark {
+          color: #7c6e66; }
+        body footer small.final .logo {
+          display: none; }
+
+.cdk-drag-dragging, .cdk-drag-preview, .cdk-drag-placeholder {
+  margin: 40px 0;
+  height: 234px;
+  width: 480px;
+  font-family: trade-gothic-next, sans-serif;
+  border: 3px solid #0b4043;
+  background-color: #ffffff;
+  transform: rotate(3deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); }
+  .cdk-drag-dragging p, .cdk-drag-preview p, .cdk-drag-placeholder p {
+    display: block;
+    padding: 45px 70px;
+    cursor: pointer;
+    transform: rotate(3deg);
+    color: #525252;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 27px; }
+
+.hidden {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

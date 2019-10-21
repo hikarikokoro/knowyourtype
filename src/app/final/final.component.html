@@ -1,0 +1,23 @@
+<section class="section final">
+  <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
+  <a routerLink="/splash" (click)="pauseTimer()" class="close"><img src="../../assets/img/Close_X.svg"></a>
+
+  <div *ngIf="answer === 'false'">
+    <p class="{{currentLanguage}}">{{ 'final.false-text' | translate}}
+      <b>{{ 'final.false-textb' | translate}}</b> {{ 'final.false-text2' | translate}}
+      <b>{{ 'final.false-textb2' | translate}}</b>
+      {{ 'final.false-text3' | translate}}</p>
+
+    <a class="button {{currentLanguage}}" (click)="pauseTimer()" routerLink="/">{{ 'final.try-again' | translate}}</a>
+  </div>
+
+  <div *ngIf="answer === 'true'">
+    <p class="{{currentLanguage}}">{{ 'final.true-text' | translate}}
+      <b>{{ 'final.true-textb' | translate}}</b></p>
+    <p class="{{currentLanguage}}">{{ 'final.true-text2' | translate}}
+      <b>{{ 'final.true-textb2' | translate}}</b>
+      {{ 'final.true-text3' | translate}}</p>
+
+    <p class="big {{currentLanguage}}">{{ 'final.true-bottom' | translate}}</p>
+  </div>
+</section>
