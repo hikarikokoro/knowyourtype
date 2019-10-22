@@ -8,14 +8,14 @@ export class LanguageService {
 
   //#region private members
 
-  private _currentLanguage = 'fr';
+  private _currentLanguage = 'en';
 
   //#endregion
 
   //#region Constructors
 
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('fr');
+    translate.setDefaultLang('en');
   }
 
   //#endregion

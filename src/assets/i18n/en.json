@@ -50,7 +50,12 @@
     "bonus-good-text": "you are on the A-list!",
     "bonus-bad-title": "Sorry,",
     "bonus-bad-text": "the answer was Th2, eosinophil, \n mast cell, and basophil!",
-    "bonus-bad-text2": "Don’t worry, you are still our Type 2! \n Look for your name on the honour roll."
+    "bonus-bad-text2": "Don’t worry, you are still our Type 2! \n Look for your name on the honour roll.",
+    "bonus-q-c": "CD4+ naïveT cell",
+    "bonus-q-c-1": "ILC2",
+    "bonus-q-c-2": "Eosinophil",
+    "bonus-q-c-3": "Mast cell",
+    "bonus-q-c-4": "Basophil"
   },
   "final": {
     "false-text": "Learn more about type 2 inflammation\nand its role in asthma and CRSwNP by\n",

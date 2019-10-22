@@ -143,7 +143,6 @@ body {
       padding: screen-size(40px) 0 screen-size(15px) 0;
 
       &.splash {
-
         .languageButtons {
           position: absolute;
           top: screen-size(5px);
@@ -157,6 +156,15 @@ body {
         h1 {
           max-width: screen-size(350px);
           margin: screen-size(50px) auto screen-size(0px) auto;
+          height: screen-size(150px);
+
+          &.fr{
+            max-width: screen-size(440px);
+          }
+
+          img{
+            width: 100%;
+          }
         }
         h2 {
           font-size: screen-size(40px);

@@ -4,7 +4,8 @@
     <button (click)="useLanguage('fr')" *ngIf="currentLanguage === 'en'">fr</button>
   </div>
   <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
-  <h1><img src="../../assets/img/DUPA-19-111_1080_BKnowOurType_Lettermark_SFW.svg"></h1>
+  <h1 *ngIf="currentLanguage === 'fr'" class="{{currentLanguage}}"><img src="../../assets/img/splash.png"></h1>
+  <h1 *ngIf="currentLanguage === 'en'" class="{{currentLanguage}}"><img src="../../assets/img/splash.svg"></h1>
   <h2 class="{{currentLanguage}}">{{'splash.sous-titre' | translate}}</h2>
 
   <div class="backgroundShape"></div>

@@ -17,7 +17,7 @@
           <button (click)="checkAnswer(false)">{{ 'quiz.false' | translate }}</button>
         </div>
       </div>
-      <img *ngIf="question.id !== 1" src="../../assets/img/questions/{{question.id -1}}.png">
+      <img *ngIf="question.id !== 1" src="../../assets/img/questions_{{currentLanguage}}/{{question.id -1}}.png">
     </div>
 
     <div class="quiz answered" *ngIf="answered">
@@ -31,7 +31,7 @@
         <button *ngIf="question.id === 6" (click)="next()">{{ 'quiz.score' | translate }}</button>
       </div>
 
-      <img src="../../assets/img/questions/{{question.id}}.png">
+      <img src="../../assets/img/questions_{{currentLanguage}}/{{question.id}}.png">
     </div>
   </div>
 
@@ -45,7 +45,7 @@
         <a class="button" routerLink="/bonus">{{ 'retro.bonus-button' | translate}}</a>
       </div>
 
-      <img *ngIf="question.id !== 1" src="../../assets/img/questions/7.png">
+      <img *ngIf="question.id !== 1" src="../../assets/img/questions_{{currentLanguage}}/6.png">
     </div>
 
     <div class="answer looser" *ngIf="score !== 6">
@@ -56,7 +56,7 @@
         <a class="button" routerLink="/final/false">{{ 'retro.next' | translate}}</a>
       </div>
 
-      <img *ngIf="question.id !== 1" src="../../assets/img/questions/7.png">
+      <img *ngIf="question.id !== 1" src="../../assets/img/questions_{{currentLanguage}}/6.png">
 
     </div>
   </div>

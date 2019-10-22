@@ -50,7 +50,12 @@
     "bonus-good-text": "votre nom figure \n sur la Liste de Prestige !",
     "bonus-bad-title": "Désolé,",
     "bonus-bad-text": "la bonne réponse incluait les cellules suivantes : \n Th2, éosinophile, mastocyte et basophile !",
-    "bonus-bad-text2": "Mais ne vous en faites pas, \n votre nom demeurera sur notre Liste d’Honneur."
+    "bonus-bad-text2": "Mais ne vous en faites pas, \n votre nom demeurera sur notre Liste d’Honneur.",
+    "bonus-q-c": "Cellule T naïve (CD4+)",
+    "bonus-q-c-1": "CLI2",
+    "bonus-q-c-2": "Éosinophile",
+    "bonus-q-c-3": "Mastocyte",
+    "bonus-q-c-4": "Basophile"
   },
   "final": {
     "false-text": "Apprenez-en plus sur l’inflammation \n de type 2 et sur son rôle dans l’asthme \n et la RSCaPN en",
