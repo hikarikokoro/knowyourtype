@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import ObjectUtility from '../../utilities/object-utility';
 import {Router} from '@angular/router';
 import {LeaderboardService} from '../../services/leaderboard.service';
 import {Leaderboard} from '../../tools/leaderboard';
 import {LanguageService} from '../../services/language.service';
+import StringUtility from '../../utilities/string-utility';
 
 @Component({
   selector: 'app-bonusquestion',
@@ -16,9 +17,10 @@ export class BonusquestionComponent implements OnInit {
 
   private _leaderboardService: LeaderboardService = undefined;
   private _router: Router = undefined;
-  private _answered = false;
+  private _done = false;
   private _answer = false;
   private _user: Leaderboard = undefined;
+  private _selected: string[] = [];
 
   //#endregion
 
@@ -46,8 +48,12 @@ export class BonusquestionComponent implements OnInit {
     return this.language.getCurrentLanguage;
   }
 
-  public get answered(): boolean {
-    return this._answered;
+  public get done(): boolean {
+    return this._done;
+  }
+
+  public get selected(): string[] {
+    return this._selected;
   }
 
   public get answer(): boolean {
@@ -68,15 +74,22 @@ export class BonusquestionComponent implements OnInit {
 
   //#region public functions
 
-  public async checkAnswer(selected: boolean): Promise<void> {
-    this._answered = true;
-    if (selected) {
+  public async checkAnswer(answer: boolean, selected?: string): Promise<void> {
+    if (!answer) {
+      this._done = true;
+      this._answer = false;
+    }
+    if (!StringUtility.isNullOrWhiteSpace(selected)) {
+      this._selected.push(selected);
+    }
+    if (this._selected.length === 4) {
+      this._done = true;
       this._answer = true;
-      await this.addToTop();
+      this.addToTop();
     }
   }
 
-  public async addToTop(): Promise<void>  {
+  public async addToTop(): Promise<void> {
     const newLeaderboard = new Leaderboard(
       this._user.name,
       this._user.type,

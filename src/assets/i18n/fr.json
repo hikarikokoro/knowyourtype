@@ -7,7 +7,7 @@
     "instructions": "Tapez n’importe où sur l’écran pour commencer"
   },
   "contact": {
-    "titre": "COMMENT \n PARTICIPER AU JEU",
+    "titre": "COMMENT\nPARTICIPER AU\nJEU-QUESTIONNAIRE",
     "titre2": "",
     "texte": "Évaluez les énoncés qui suivent concernant \n ",
     "texte_b1": "l’inflammation de type 2",
@@ -18,7 +18,11 @@
     "name": "Nom",
     "type": "Spécialité",
     "start": "COMMENCER",
-    "instructions": "Vous pouvez appuyer sur le bouton « x » à \n tout moment pour redémarrer l’application"
+    "instructions": "Vous pouvez appuyer sur le bouton « x » à \n tout moment pour redémarrer l’application",
+    "err_name": "Le nom est requis.",
+    "err_name_lth": "Le nom doit avoir un minimum de 4 caractères.",
+    "err_type": "La spécialité est requise.",
+    "err_type_lth": "La spécialité doit avoir un minimum de 4 caractères."
   },
   "quiz": {
     "true": "VRAI",
@@ -35,7 +39,7 @@
     "q6e": "Les trois cytokines contribuent aux \n changements structuraux de l’épithélium et de \n la sous-muqueuse des voies respiratoires."
   },
   "retro": {
-    "almost": "PRESQUE",
+    "almost": "PRESQUE !",
     "answer1": "VOUS AVEZ UN SCORE DE",
     "answer2": "SUR 6.",
     "next": "SUIVANT",

@@ -18,7 +18,11 @@
     "name": "Name",
     "type": "Specialty",
     "start": "START THE QUIZ",
-    "instructions": "At any time, tap the ‘X’ button \n to restart the app"
+    "instructions": "At any time, tap the ‘X’ button \n to restart the app",
+    "err_name": "Name is required.",
+    "err_name_lth": "Name must be at least 4 characters long.",
+    "err_type": "Specialty is required",
+    "err_type_lth": "Specialty must be at least 4 characters long."
   },
   "quiz": {
     "true": "TRUE",

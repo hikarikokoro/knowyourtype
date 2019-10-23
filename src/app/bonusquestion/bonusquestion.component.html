@@ -2,7 +2,7 @@
   <img class="sanofiLogo" src="../../assets/img/SanofiGenzyme_Logo.svg">
   <a routerLink="/splash" class="close"><img src="../../assets/img/Close_X.svg"></a>
 
-  <div class="quiz" *ngIf="!answered">
+  <div class="quiz" *ngIf="!done">
     <div class="content">
       <h2>{{ 'retro.bonus-question-title' | translate}}</h2>
       <p>{{ 'retro.bonus-question' | translate}}</p>
@@ -13,21 +13,21 @@
         <button (click)="checkAnswer(false)" class="first"><span>{{ 'retro.bonus-q-c' | translate}}</span><img src="../../assets/img/germs/Interleukins_WebOp_1.png"></button>
         <div>
           <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_2.png"><span>Th1</span></button>
-          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_3.png"><span>Th2</span></button>
+          <button (click)="checkAnswer(true, '1')" [ngClass]="{'selected': selected.indexOf('1') != -1}"><img src="../../assets/img/germs/Interleukins_WebOp_3.png"><span>Th2</span></button>
           <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_4.png"><span>Th17</span></button>
           <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_5.png"><span>Th22</span></button>
         </div>
         <div>
           <button (click)="checkAnswer(false)"><img src="../../assets/img/germs/Interleukins_WebOp_6.png"><span>{{ 'retro.bonus-q-c-1' | translate}}</span></button>
-          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_7.png"><span>{{ 'retro.bonus-q-c-2' | translate}}</span></button>
-          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_8.png"><span>{{ 'retro.bonus-q-c-3' | translate}}</span></button>
-          <button (click)="checkAnswer(true)"><img src="../../assets/img/germs/Interleukins_WebOp_9.png"><span>{{ 'retro.bonus-q-c-4' | translate}}</span></button>
+          <button (click)="checkAnswer(true, '2')" [ngClass]="{'selected': selected.indexOf('2') != -1}"><img src="../../assets/img/germs/Interleukins_WebOp_7.png"><span>{{ 'retro.bonus-q-c-2' | translate}}</span></button>
+          <button (click)="checkAnswer(true, '3')" [ngClass]="{'selected': selected.indexOf('3') != -1}"><img src="../../assets/img/germs/Interleukins_WebOp_8.png"><span>{{ 'retro.bonus-q-c-3' | translate}}</span></button>
+          <button (click)="checkAnswer(true, '4')" [ngClass]="{'selected': selected.indexOf('4') != -1}"><img src="../../assets/img/germs/Interleukins_WebOp_9.png"><span>{{ 'retro.bonus-q-c-4' | translate}}</span></button>
         </div>
       </div>
     </div>
   </div>
 
-  <div *ngIf="answered">
+  <div *ngIf="done">
     <div *ngIf="answer" class="answer winner">
       <h2 class="{{currentLanguage}}">{{ 'retro.bonus-good-title' | translate}}<br>
         {{ 'retro.bonus-good-text' | translate}}</h2>

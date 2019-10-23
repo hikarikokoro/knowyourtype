@@ -360,6 +360,7 @@ body {
         h1.fr {
           font-size: screen-size(40px);
           white-space: pre;
+          margin-bottom: screen-size(10px);
         }
         p.fr {
           font-size: screen-size(26px);
@@ -394,7 +395,7 @@ body {
             .alert {
               p {
                 color: red;
-                font-size: screen-size(25px);
+                font-size: screen-size(21px);
                 margin-top: screen-size(-20px);
                 margin-bottom: screen-size(-7px);
               }
@@ -534,6 +535,9 @@ body {
             max-width: screen-size(93px);
             padding: 0;
 
+            &.selected{
+              opacity: 0.6;
+            }
             img {
               max-width: screen-size(63px);
             }

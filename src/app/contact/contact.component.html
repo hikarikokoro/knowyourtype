@@ -17,10 +17,10 @@
       <div *ngIf="profileForm.controls.name.invalid && (profileForm.controls.name.dirty || profileForm.controls.name.touched || submitted)"
            class="alert alert-danger">
         <div *ngIf="profileForm.controls.name.errors.required && submitted">
-          <p>Name is required.</p>
+          <p>{{ 'contact.err_name' | translate }}</p>
         </div>
         <div *ngIf="profileForm.controls.name.errors.minlength && submitted">
-          <p>Name must be at least 4 characters long.</p>
+          <p>{{ 'contact.err_name_lth' | translate }}</p>
         </div>
       </div><br>
 
@@ -30,10 +30,10 @@
       <div *ngIf="profileForm.controls.type.invalid && (profileForm.controls.type.dirty || profileForm.controls.type.touched || submitted)"
            class="alert alert-danger">
         <div *ngIf="profileForm.controls.type.errors.required && submitted">
-          <p>Type is required.</p>
+          <p>{{ 'contact.err_type' | translate }}</p>
         </div>
         <div *ngIf="profileForm.controls.type.errors.minlength && submitted">
-          <p>Type must be at least 4 characters long.</p>
+          <p>{{ 'contact.err_type_lth' | translate }}</p>
         </div>
       </div><br>
     </fieldset>
