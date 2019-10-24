@@ -5,9 +5,9 @@ import {
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {LeaderboardService} from '../../services/leaderboard.service';
 import ObjectUtility from '../../utilities/object-utility';
-import {Leaderboard} from '../../tools/leaderboard';
 import {Router} from '@angular/router';
 import {LanguageService} from '../../services/language.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-contact',
@@ -25,19 +25,26 @@ export class ContactComponent implements OnInit {
   private _submitted: boolean = false;
   private _desabledButton: boolean = false;
   private _leaderboardService: LeaderboardService = undefined;
+  private _userService: UserService = undefined;
   private _router: Router = undefined;
 
   //#endregion
 
   //#region constructor
 
-  constructor(leaderboardService: LeaderboardService,
+  constructor(private leaderboardService: LeaderboardService,
               private router: Router,
-              private language: LanguageService) {
+              private language: LanguageService,
+              private userService: UserService
+              ) {
     if (ObjectUtility.isNullOrUndefined(leaderboardService)) {
       throw new Error('LEADERBOARD CANNOT BE EMPTY OR UNDEINED');
     }
+    if (ObjectUtility.isNullOrUndefined(userService)) {
+      throw new Error('USER SERVICE CANNOT BE EMPTY OR UNDEINED');
+    }
     this._leaderboardService = leaderboardService;
+    this._userService = userService;
     this._router = router;
   }
 
@@ -81,7 +88,7 @@ export class ContactComponent implements OnInit {
     this._submitted = true;
     if (this._profileForm.valid) {
       this._desabledButton = true;
-      this.registerUser();
+      this.goToQuiz();
     } else {
       console.log('INVALID');
     }
@@ -92,13 +99,9 @@ export class ContactComponent implements OnInit {
   //#region private functions
 
   private goToQuiz(): void {
+    this._userService.changeUserName(this._profileForm.value.name);
+    this._userService.changeUserType(this._profileForm.value.type);
     this._router.navigate(['/quiz']);
-  }
-
-  private async registerUser(): Promise<void> {
-    const leaderboardEntry: Leaderboard = new Leaderboard(this._profileForm.value.name, this._profileForm.value.type);
-    await this._leaderboardService.create(leaderboardEntry);
-    this.goToQuiz();
   }
 
   //#endregion

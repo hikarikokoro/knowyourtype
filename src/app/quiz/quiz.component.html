@@ -22,8 +22,16 @@
 
     <div class="quiz answered" *ngIf="answered">
       <div class="content">
-        <p class="answer" *ngIf="question.answer">{{ 'quiz.true' | translate }}</p>
-        <p class="answer" *ngIf="!question.answer">{{ 'quiz.false' | translate }}</p>
+        <p class="answerr" *ngIf="answeredRight">
+          {{ 'quiz.a_true' | translate }}
+          <span class="answer" *ngIf="question.answer">{{ 'quiz.true' | translate }}</span>
+          <span class="answer" *ngIf="!question.answer">{{ 'quiz.false' | translate }}</span>
+        </p>
+        <p class="answerr" *ngIf="!answeredRight">
+          {{ 'quiz.a_false' | translate }}
+        <span class="answer" *ngIf="question.answer">{{ 'quiz.true' | translate }}</span>
+        <span class="answer" *ngIf="!question.answer">{{ 'quiz.false' | translate }}</span>
+        </p>
         <p *ngIf="question.id === 2">{{ 'quiz.q2e' | translate }}</p>
         <p *ngIf="question.id === 6">{{ 'quiz.q6e' | translate }}</p>
 

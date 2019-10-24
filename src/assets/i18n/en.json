@@ -25,6 +25,8 @@
     "err_type_lth": "Specialty must be at least 4 characters long."
   },
   "quiz": {
+    "a_true": "Correct!\nThe right answer is",
+    "a_false": "Wrong!\nThe right answer was",
     "true": "TRUE",
     "false": "FALSE",
     "score": "GET YOUR SCORE",

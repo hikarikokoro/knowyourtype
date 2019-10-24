@@ -25,6 +25,8 @@
     "err_type_lth": "La spécialité doit avoir un minimum de 4 caractères."
   },
   "quiz": {
+    "a_true": "Bravo!\nLa bonne reponse est",
+    "a_false": "Faux!\nLa bonne réponse était",
     "true": "VRAI",
     "false": "FAUX",
     "score": "VOIR VOTRE SCORE",

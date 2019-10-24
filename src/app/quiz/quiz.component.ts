@@ -5,6 +5,8 @@ import {LeaderboardService} from '../../services/leaderboard.service';
 import {QuizService} from '../../services/quiz.service';
 import {Quiz} from '../../tools/quiz';
 import {LanguageService} from '../../services/language.service';
+import {Leaderboard} from '../../tools/leaderboard';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-quiz',
@@ -17,10 +19,12 @@ export class QuizComponent implements OnInit {
   private _chosen: number = 0;
   private _question: Quiz = undefined;
   private _leaderboardService: LeaderboardService = undefined;
+  private _userService: UserService = undefined;
   private _quizService: QuizService = undefined;
   private _router: Router = undefined;
   private _retro = false;
   private _answered = false;
+  private _answeredRight = false;
   private _seeScore = false;
   private _score: number = 0;
 
@@ -30,6 +34,7 @@ export class QuizComponent implements OnInit {
 
   constructor(
     private leaderboardService: LeaderboardService,
+    private userService: UserService,
     private router: Router,
     private quizService: QuizService,
     private language: LanguageService
@@ -40,7 +45,11 @@ export class QuizComponent implements OnInit {
     if (ObjectUtility.isNullOrUndefined(quizService)) {
       throw new Error('QUIZ CANNOT BE EMPTY OR UNDEINED');
     }
+    if (ObjectUtility.isNullOrUndefined(userService)) {
+      throw new Error('USER CANNOT BE EMPTY OR UNDEINED');
+    }
     this._leaderboardService = leaderboardService;
+    this._userService = userService;
     this._quizService = quizService;
     this._router = router;
   }
@@ -61,6 +70,10 @@ export class QuizComponent implements OnInit {
 
   public get answered(): boolean {
     return this._answered;
+  }
+
+  public get answeredRight(): boolean {
+    return this._answeredRight;
   }
 
   public get retro(): boolean {
@@ -92,9 +105,16 @@ export class QuizComponent implements OnInit {
   public checkAnswer(selected: boolean): void {
     this._retro = false;
     this._answered = true;
+    this._answeredRight = false;
+
     if (selected === this._question.answer) {
       this._retro = true;
+      this._answeredRight = true;
       this._score += 1;
+    }
+    console.log(this._answeredRight);
+    if (this._score === 6) {
+      this.registerUser();
     }
   }
 
@@ -114,6 +134,13 @@ export class QuizComponent implements OnInit {
   private nextQuestion(): void {
     this._question = this._quizService.getById(this._chosen);
     this._answered = false;
+  }
+
+  private async registerUser(): Promise<void> {
+    const userName = this._userService.getUserName();
+    const userType = this._userService.getUserType();
+    const leaderboardEntry: Leaderboard = new Leaderboard(userName, userType);
+    await this._leaderboardService.create(leaderboardEntry);
   }
 
   //#endregion

@@ -14,7 +14,9 @@ import {SplashComponent} from './splash/splash.component';
 import {ContactComponent} from './contact/contact.component';
 import {QuizComponent} from './quiz/quiz.component';
 import {FinalComponent} from './final/final.component';
-import { BonusquestionComponent } from './bonusquestion/bonusquestion.component';
+import {BonusquestionComponent} from './bonusquestion/bonusquestion.component';
+
+import {UserService} from '../services/user.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { BonusquestionComponent } from './bonusquestion/bonusquestion.component'
       }
     })
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
