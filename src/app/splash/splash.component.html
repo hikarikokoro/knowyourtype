@@ -11,7 +11,7 @@
   <div class="backgroundShape"></div>
   <img src="../../assets/img/AwardThing.svg" class="award">
 
-  <div class="leaderboard">
+  <div class="leaderboard {{currentLanguage}}">
     <div class="ch2">
       <ul id="firstLeaderboard">
         <ng-template ngFor let-item [ngForOf]="topLeaderboards" let-i="index">
@@ -25,7 +25,7 @@
   <div class="backgroundShadow"></div>
 
   <div class="backgroundShape2"></div>
-  <div class="leaderboard2">
+  <div class="leaderboard2 {{currentLanguage}}">
     <div class="ch">
       <ul id="secondLeaderboard">
         <ng-template ngFor let-item [ngForOf]="leaderboards" let-i="index">

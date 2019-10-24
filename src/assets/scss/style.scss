@@ -275,20 +275,25 @@ body {
 
         div.leaderboard, div.leaderboard2 {
           width: 80%;
-          margin: screen-size(0px) auto screen-size(0px) auto;
+          margin: screen-size(13px) auto screen-size(0px) auto;
           padding: screen-size(15px);
           height: screen-size(215px);
           overflow: hidden;
           position: relative;
 
           &.leaderboard {
-            height: screen-size(110px);
-            margin-top: screen-size(20px);
+            height: screen-size(100px);
+            margin-top: screen-size(32.5px);
+
+            &.fr{
+              height: screen-size(100px);
+              margin-top: screen-size(28.5px);
+            }
           }
 
           #firstLeaderboard {
-            //-webkit-transition: opacity 0.5s ease-out;
-            //-webkit-animation: autoScrolling 5s linear infinite alternate;
+            -webkit-transition: opacity 0.5s ease-out;
+            -webkit-animation: autoScrolling 5s linear infinite alternate;
           }
           @-webkit-keyframes autoScrolling {
             from {
