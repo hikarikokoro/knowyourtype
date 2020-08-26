@@ -4,8 +4,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-client-local": "http-server --proxy http://localhost:8080?",
-    "start-client": "http-server -P https://knowourtype.org?",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
