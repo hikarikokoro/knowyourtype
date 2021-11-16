@@ -22,7 +22,7 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "aws": "0.0.3-2",
-    "aws-sdk": "^2.543.0",
+    "aws-sdk": "^2.814.0",
     "firebase": "^7.1.0",
     "http-server": "^0.11.1",
     "lodash": "^4.17.15",
